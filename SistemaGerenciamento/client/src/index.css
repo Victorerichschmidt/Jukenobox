@@ -1,0 +1,151 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(210 25% 7.8431%);
+  --card: hsl(180 6.6667% 97.0588%);
+  --card-foreground: hsl(210 25% 7.8431%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(210 25% 7.8431%);
+  --primary: hsl(210 46% 26%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(203 88% 53%);
+  --secondary-foreground: hsl(0 0% 100%);
+  --muted: hsl(240 1.9608% 90%);
+  --muted-foreground: hsl(210 25% 7.8431%);
+  --accent: hsl(211 51% 93%);
+  --accent-foreground: hsl(203 88% 53%);
+  --destructive: hsl(356 91% 54%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(201 30% 91%);
+  --input: hsl(200 23% 97%);
+  --ring: hsl(203 89% 53%);
+  --chart-1: hsl(203 88% 53%);
+  --chart-2: hsl(160 100% 36%);
+  --chart-3: hsl(42 93% 56%);
+  --chart-4: hsl(147 79% 42%);
+  --chart-5: hsl(341 75% 51%);
+  --sidebar: hsl(180 6.6667% 97.0588%);
+  --sidebar-foreground: hsl(210 25% 7.8431%);
+  --sidebar-primary: hsl(203 88% 53%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(211 51% 93%);
+  --sidebar-accent-foreground: hsl(203 88% 53%);
+  --sidebar-border: hsl(205 25% 91%);
+  --sidebar-ring: hsl(203 89% 53%);
+  --font-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --radius: 0.5rem;
+  --surface: hsl(216 10% 97%);
+  --textLight: hsl(210 10% 56%);
+  --hover: hsl(202 88% 39%);
+}
+
+.dark {
+  --background: hsl(0 0% 0%);
+  --foreground: hsl(200 6.6667% 91.1765%);
+  --card: hsl(228 9.8039% 10%);
+  --card-foreground: hsl(0 0% 85.0980%);
+  --popover: hsl(0 0% 0%);
+  --popover-foreground: hsl(200 6.6667% 91.1765%);
+  --primary: hsl(210 46% 26%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(203 88% 53%);
+  --secondary-foreground: hsl(0 0% 100%);
+  --muted: hsl(0 0% 9.4118%);
+  --muted-foreground: hsl(210 3.3898% 46.2745%);
+  --accent: hsl(206 70% 8%);
+  --accent-foreground: hsl(203 88% 53%);
+  --destructive: hsl(356 91% 54%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(210 5.2632% 14.9020%);
+  --input: hsl(208 28% 18%);
+  --ring: hsl(203 89% 53%);
+  --chart-1: hsl(203 88% 53%);
+  --chart-2: hsl(160 100% 36%);
+  --chart-3: hsl(42 93% 56%);
+  --chart-4: hsl(147 79% 42%);
+  --chart-5: hsl(341 75% 51%);
+  --sidebar: hsl(228 9.8039% 10%);
+  --sidebar-foreground: hsl(0 0% 85.0980%);
+  --sidebar-primary: hsl(203 89% 53%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(206 70% 8%);
+  --sidebar-accent-foreground: hsl(203 88% 53%);
+  --sidebar-border: hsl(206 16% 26%);
+  --sidebar-ring: hsl(203 89% 53%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-surface text-foreground;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+}
+
+@layer utilities {
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .card-hover:hover {
+    @apply -translate-y-1;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.3s ease-in;
+  }
+  
+  .text-primary {
+    color: var(--primary);
+  }
+  
+  .text-secondary {
+    color: var(--secondary);
+  }
+  
+  .text-textLight {
+    color: var(--textLight);
+  }
+  
+  .bg-primary {
+    background-color: var(--primary);
+  }
+  
+  .bg-secondary {
+    background-color: var(--secondary);
+  }
+  
+  .bg-surface {
+    background-color: var(--surface);
+  }
+  
+  .bg-hover {
+    background-color: var(--hover);
+  }
+  
+  .border-secondary {
+    border-color: var(--secondary);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Painel Administrativo</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --light-color: #ecf0f1;
+            --hover-color: #2980b9;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo {
+            height: 40px;
+        }
+        
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .welcome-message h1 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .welcome-message p {
+            color: #7f8c8d;
+        }
+        
+        .quick-actions {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .quick-action-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .quick-action-btn:hover {
+            background-color: var(--hover-color);
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card i {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .card h2 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .card p {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .status-bar {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+        
+        .status-item {
+            padding: 0 1rem;
+        }
+        
+        .status-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .status-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .dashboard-header {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .quick-actions {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .status-bar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <img class="logo" src="imagens/Planet.png" alt="logo">
+        <img class="logo" src="imagens/Juke.png" alt="logo secundária">
+    </div>
+</header>
+
+<main>
+    <div class="dashboard-header">
+        <div class="welcome-message">
+            <h1>Bem-vindo ao Painel Administrativo</h1>
+            <p>Acesse rapidamente as principais funcionalidades</p>
+        </div>
+        <div class="quick-actions">
+            <button class="quick-action-btn">
+                <i class="fas fa-plus"></i> Novo Item
+            </button>
+            <button class="quick-action-btn">
+                <i class="fas fa-chart-line"></i> Relatórios
+            </button>
+        </div>
+    </div>
+    
+    <div class="status-bar">
+        <div class="status-item">
+            <h3>Produtos</h3>
+            <div class="status-value">1,245</div>
+        </div>
+        <div class="status-item">
+            <h3>Clientes</h3>
+            <div class="status-value">568</div>
+        </div>
+        <div class="status-item">
+            <h3>Funcionários</h3>
+            <div class="status-value">42</div>
+        </div>
+        <div class="status-item">
+            <h3>Pedidos Hoje</h3>
+            <div class="status-value">27</div>
+        </div>
+    </div>
+    
+    <div class="cards-grid">
+        <a href="produtos.html">
+            <div class="card" id="produtos">
+                <i class="fas fa-box-open fa-3x"></i>
+                <h2>Produtos</h2>
+                <p>Gerenciamento de produtos da empresa.</p>
+                <small>1,245 itens cadastrados</small>
+            </div>
+        </a>
+
+        <a href="clientes.html">
+            <div class="card" id="clientes">
+                <i class="fas fa-users fa-3x"></i>
+                <h2>Clientes</h2>
+                <p>Informações sobre clientes cadastrados.</p>
+                <small>568 clientes ativos</small>
+            </div>
+        </a>
+
+        <a href="funcionarios.html">
+            <div class="card" id="funcionarios">
+                <i class="fas fa-user-tie fa-3x"></i>
+                <h2>Funcionários</h2>
+                <p>Lista e gerenciamento de funcionários.</p>
+                <small>42 colaboradores</small>
+            </div>
+        </a>
+
+        <a href="estoque.html">
+            <div class="card" id="estoque">
+                <i class="fas fa-warehouse fa-3x"></i>
+                <h2>Compras</h2>
+                <p>Controle de compra e movimentações.</p>
+                <small>15 pedidos hoje</small>
+            </div>
+        </a>
+        
+        <a href="vendas.html">
+            <div class="card" id="vendas">
+                <i class="fas fa-shopping-cart fa-3x"></i>
+                <h2>Vendas</h2>
+                <p>Controle de vendas e transações.</p>
+                <small>27 vendas hoje</small>
+            </div>
+        </a>
+        
+        <a href="relatorios.html">
+            <div class="card" id="relatorios">
+                <i class="fas fa-chart-pie fa-3x"></i>
+                <h2>Relatórios</h2>
+                <p>Análises e dados estatísticos.</p>
+                <small>10 modelos disponíveis</small>
+            </div>
+        </a>
+    </div>
+</main>
+
+</body>
+</html>
